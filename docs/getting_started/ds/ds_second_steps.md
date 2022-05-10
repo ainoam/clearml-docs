@@ -150,7 +150,7 @@ Once everything is neatly logged and displayed, using the [comparison tool](../.
 
 The experiment table is a powerful tool for creating dashboards and views of your own projects, your team's projects, or the entire development.
 
-![image](../../img/webapp_exp_table_01.png)
+![image](../../img/webapp_experiment_table.png)
 
 
 ### Creating Leaderboards
@@ -176,7 +176,7 @@ or check these pages out:
 
 - Scale you work and deploy [ClearML Agents](../../clearml_agent.md)
 - Develop on remote machines with [ClearML Session](../../apps/clearml_session.md)
-- Structure your work and put it into [Pipelines](../../fundamentals/pipelines.md)
+- Structure your work and put it into [Pipelines](../../pipelines/pipelines.md)
 - Improve your experiments with [HyperParameter Optimization](../../fundamentals/hpo.md)
 - Check out ClearML's integrations to [external libraries](../../integrations/libraries.md).
 

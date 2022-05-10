@@ -35,6 +35,11 @@ In the example script, the controller defines the interactions between the pipel
 1. The second step's output, `preprocessed_data`, is modified within the pipeline execution logic 
 1. The modified data is passed to the third step, `step_three`.
 
+:::info Local Execution
+In this example, the pipeline is set to run in local mode by using the [PipelineDecorator.run_locally](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorrun_locally) 
+method before calling the pipeline function. See pipeline execution options [here](../../pipelines/pipelines_sdk_function_decorators.md#running-the-pipeline). 
+:::
+
 ## Pipeline Steps 
 Using the `@PipelineDecorator.component` decorator will make the function a pipeline component that can be called from the 
 pipeline controller, which implements the pipeline's execution logic. For detailed information, see [`@PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent). 
@@ -62,40 +67,40 @@ decorator overrides the default queue value for the specific step for which it w
 
 :::note Execution Modes
 ClearML provides different pipeline execution modes to accommodate development and production use cases. For additional 
-details, see [Execution Modes](../../fundamentals/pipelines.md#pipeline-controller-execution-options).
+details, see [Execution Modes](../../pipelines/pipelines.md#running-your-pipelines).
 :::
 
 To run the pipeline, call the pipeline controller function.
 
 ## WebApp
 
-### Pipeline Controller
-The pipeline controller’s **CONFIGURATION** page contains the pipeline structure and step definitions in its **Configuration Objects** 
-section.
+When the experiment is executed, the terminal returns the task ID, and links to the pipeline controller task page and pipeline page. 
 
-The **Pipeline** configuration object contains the pipeline structure and execution parameters.
+```
+ClearML Task: created new task id=bc93610688f242ecbbe70f413ff2cf5f
+ClearML results page: https://app.clear.ml/projects/462f48dba7b441ffb34bddb783711da7/experiments/bc93610688f242ecbbe70f413ff2cf5f/output/log
+ClearML pipeline page: https://app.clear.ml/pipelines/462f48dba7b441ffb34bddb783711da7/experiments/bc93610688f242ecbbe70f413ff2cf5f
+```
 
-![Pipeline configuration](../../img/pipeline_decorator_configurations.png)
+The pipeline run’s page contains the pipeline’s structure, the execution status of every step, as well as the run’s 
+configuration parameters and output.
 
-An additional configuration object per pipeline step contains the step’s definitions and execution parameters.
+![Pipeline DAG](../../img/examples_pipeline_from_decorator_DAG.png)
 
-The pipeline controller’s **RESULTS > PLOTS** page provides summary details for the pipeline execution.
+To view a run’s complete information, click **Full details** on the bottom of the **Run Info** panel, which will open the 
+pipeline’s [controller task page](../../webapp/webapp_exp_track_visual.md).
 
-The **Execution Flow** graphically summarizes the pipeline's execution. Hover over each step to view its details.
+Click a step to see an overview of its details.
 
-![Pipeline execution flow plot](../../img/pipeline_decorator_plot_1.png)
+![Pipeline step info](../../img/examples_pipeline_from_decorator_step_info.png)
 
-The **Execution Details** table provides the pipeline execution details in table format. 
+## Console and Code
 
-![Pipeline execution details plot](../../img/pipeline_decorator_plot_2.png)
+Click **DETAILS** to view a log of the pipeline controller’s console output.   
 
-### Pipeline Steps 
-Each function step’s arguments are stored in their respective task’s **CONFIGURATION > HYPER PARAMETERS > kwargs**. 
+![Pipeline console](../../img/examples_pipeline_from_decorator_console.png)
 
-![Pipeline step configuration](../../img/pipeline_decorator_step_configuration.png)
+Click on a step to view its console output. You can also view the selected step’s code by clicking **CODE**
+on top of the console log.
 
-
-Values that were listed in the `return_values`parameter of the `@PipelineDecorator.component` decorator are stored as 
-artifacts in the relevant step's task. These artifacts can be viewed in the step task’s **ARTIFACTS** tab. 
-
-![Pipeline step artifacts](../../img/pipeline_decorator_step_artifacts.png)
+![Pipeline step code](../../img/examples_pipeline_from_decorator_code.png)

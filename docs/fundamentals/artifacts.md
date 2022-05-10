@@ -13,7 +13,8 @@ A few examples of artifacts are:
 
 ## Artifacts
 ### Logging Artifacts
-To log any type of artifact to a Task, use the `upload_artifact()` method. For example:
+To log any type of artifact to a Task, use the [`upload_artifact`](../references/sdk/task.md#upload_artifact) method. 
+For example:
 
 * Upload a local file containing the preprocessing results of the data.
 ```python
@@ -24,12 +25,27 @@ task.upload_artifact(name='data', artifact_object='/path/to/preprocess_data.csv'
 ```python
 task.upload_artifact(name='folder', artifact_object='/path/to/folder/')
 ```
-* Upload an instance of an object, Numpy / Pandas / PIL (converted to npz / csv.gz / jpg formats accordingly). If the 
-  object type is unknown, it is pickled and uploaded.
-```python
-person_dict = {'name': 'Erik', 'age': 30}
-task.upload_artifact(name='person dictionary', artifact_object=person_dict)
-```
+* Serialize and upload a Python object. ClearML automatically chooses the file format based on the object’s type, or you 
+  can explicitly specify the format as follows:
+    * dict - `.json` (default), `.yaml` 
+    * pandas.DataFrame - `.csv.gz` (default), `.parquet`, `.feather`, `.pickle` 
+    * numpy.ndarray - `.npz` (default), `.csv.gz` 
+    * PIL.Image - Any PIL-supported extensions (default `.png`)
+  
+  For example: 
+  ```python
+  person_dict = {'name': 'Erik', 'age': 30}
+  
+  # upload as JSON artifact
+  task.upload_artifact(name='person dictionary json', artifact_object=person_dict)
+  
+  # upload as YAML artifact
+  task.upload_artifact(
+    name='person dictionary yaml', 
+    artifact_object=person_dict, 
+    extension_name="yaml"
+  )
+  ```
 
 See more details in the artifacts [example](../guides/reporting/artifacts.md).
 
@@ -74,7 +90,7 @@ This property makes Models a standalone entry that can be used as an artifactory
 When models are saved using certain frameworks (for instance, by calling the `torch.save()` method), ClearML automatically 
 logs the models and all snapshot paths.
 
-![image](../img/fundamentals_artifacts_logging_models.png)
+![image](../img/examples_model_update_model.png)
 
 See automatic model logging examples: 
 * [TF](../guides/frameworks/tensorflow/tensorflow_mnist.md)
@@ -163,8 +179,15 @@ This is especially helpful when using [clearml-agent](../clearml_agent.md) to ex
 
 ### List of Supported Frameworks
 
-- Tensorflow 
+- TensorFlow 
 - Keras 
-- Pytorch 
+- PyTorch 
+- PyTorch Ignite
+- PyTorch Lightning  
 - scikit-learn (only using joblib)
 - XGBoost (only using joblib)
+- AutoKeras
+- FastAI
+- LightGBM
+- MegEngine 
+- CatBoost
