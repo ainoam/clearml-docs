@@ -11,7 +11,7 @@ In v0.16, the Elasticsearch subsystem of **Trains Server** was upgraded from ver
 the migration of the database contents to accommodate the change in index structure across the different versions.  
   
 This page provides the instructions to carry out the migration process. Follow this process if using **Trains Server** 
-version 0.15 or older and are upgrading to **ClearML Server**. 
+version 0.15 or older and are upgrading to ClearML Server. 
   
 The migration process makes use of a script that automatically performs the following:
 
@@ -24,7 +24,7 @@ The migration process makes use of a script that automatically performs the foll
 
 :::warning 
 Once the migration process completes successfully, the data is no longer accessible to the older version of Trains Server, 
-and **ClearML Server** needs to be installed.
+and ClearML Server needs to be installed.
 :::
 
 ### Prerequisites
@@ -151,7 +151,7 @@ All console output during the execution of the migration script is saved to a lo
 If the migration script does not complete successfully, the migration script prints the error.
 
 :::important  
-For help in resolving migration issues, check the **allegro-clearml** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg), 
+For help in resolving migration issues, check the **ClearML** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg), 
 [GitHub Issues](https://github.com/allegroai/clearml-server/issues), and the **ClearML Server** sections of the [FAQ](../faq.md).     
 :::
     

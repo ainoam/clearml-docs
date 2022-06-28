@@ -5,7 +5,7 @@ title: Tracking Experiments and Visualizing Results
 While an experiment is running, and any time after it finishes, track it and visualize the results in the ClearML Web UI,
 including:
 
-* [Execution details](#execution-details) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
+* [Execution details](#execution) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
 * [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
@@ -145,7 +145,7 @@ The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
 ![TF_DEFINE parameter group](../img/webapp_tracking_26.png)
 
-Once an experiment is run and stored in **ClearML Server**, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
+Once an experiment is run and stored in ClearML Server, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
 ### User Properties
 
@@ -167,7 +167,7 @@ parameter in [`Task.connect_configuration`](../references/sdk/task.md#connect_co
 ![Custom configuration objects](../img/webapp_tracking_28.png)
 
 :::important
-In older versions of **ClearML Server**, the Task model configuration appeared in the **ARTIFACTS** tab, **MODEL CONFIGURATION** section. Task model configurations now appear in the **Configuration Objects** section, in the **CONFIGURATION** tab.
+In older versions of ClearML Server, the Task model configuration appeared in the **ARTIFACTS** tab, **MODEL CONFIGURATION** section. Task model configurations now appear in the **Configuration Objects** section, in the **CONFIGURATION** tab.
 :::
 
 
@@ -231,6 +231,8 @@ General experiment details appear in the **INFO** tab. This includes information
   * Host name 
   * Processor
   * Python version
+* Experiment Progress    
+
     
 ![Info tab](../img/webapp_tracking_31.png)
 
@@ -257,12 +259,12 @@ is downloadable. To view the end of the log, click **Jump to end**.
 
 ### Scalars
 
-All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in **RESULTS** **>** 
+All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in
 **SCALARS**. Scalar values are presented as time series line chart. To see the series for a metric in high resolution, 
 view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
 
 :::info Full Screen Refresh
-Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-sm space-sm" /> 
+Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon lt size-md space-sm medium-zoom-image" /> 
 to update the graph. 
 :::
 
@@ -305,7 +307,7 @@ are on the left side of the window. The tools include:
 See additional [plot controls](#plot-controls) below.
 
 ### Plots
-Non-time-series plots appear in **RESULTS** **>** **PLOTS**. These include data reported by libraries, visualization 
+Non-time-series plots appear in **PLOTS**. These include data reported by libraries, visualization 
 tools, and ClearML explicit reporting. These may include 2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. 
 Individual plots can be shown / hidden or filtered by title.
 
@@ -333,6 +335,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> and then hover over the plot. |
 | <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view icon" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
 | <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
+| <img src="/docs/latest/icons/ico-reset_1.svg" alt="Plot layout setting" className="icon size-sm space-sm" />| Switch between original and auto-fitted plot dimensions. The original layout is the plot's user-defined dimensions. |
 | <img src="/docs/latest/icons/ico-download-json-plot.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | Download plot data as a JSON file. |
 | <img src="/docs/latest/icons/ico-download-csv.svg" alt="Download CSV icon" className="icon size-sm space-sm" /> | Download plot data as a CSV file. |
 | <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. When used with scalar graphs, full screen mode displays plots with all data points, as opposed to an averaged plot |
@@ -374,7 +377,7 @@ Use the viewer / player to inspect images, audio, video samples and do any of th
 
 **To view a debug sample in the viewer / player:**
 
-1. Click the debug sample click the thumbnail.
+1. Click the debug sample thumbnail.
 
 1. Do any of the following:
 
@@ -403,4 +406,4 @@ on, label versions of experiments, or apply team names to organize experimentati
 
 ## Locating the Experiment (Task) ID
 
-* In the info panel, in the top area, to the right of the Task name, click **ID**. The Task ID appears.
+The task ID appears in the experiment page's header. 

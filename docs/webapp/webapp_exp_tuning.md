@@ -97,9 +97,9 @@ and formats for specifying locations include:
 
 :::note Set Output Destination for Artifacts
 Also set the output destination for artifacts in code (see the `output_uri` parameter of the
-[Task.init](../references/sdk/task.md#taskinit)
+[`Task.init`](../references/sdk/task.md#taskinit)
 method), and in the ClearML configuration file 
-for all experiments (see [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
+for all experiments (see [`default_output_uri`](../configs/clearml_conf.md#config_default_output_uri)
 on the ClearML Configuration Reference page).
 :::
 
@@ -118,7 +118,7 @@ Set a logging level for the experiment (see the standard Python [logging levels]
 #### Hyperparameters
 
 :::important
-In older versions of **ClearML Server**, the **CONFIGURATION** tab was named **HYPER PARAMETERS**, and it contained all
+In older versions of ClearML Server, the **CONFIGURATION** tab was named **HYPER PARAMETERS**, and it contained all
 parameters. The renamed tab contains a **HYPER PARAMETER** section, and subsections for hyperparameter groups.
 :::
 
@@ -138,7 +138,7 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 
 **To add, change, or delete hyperparameters:**
 
-* In the **CONFIGURATIONS** tab **>** **HYPER PARAMETERS** > **General** **>** hover **>** **EDIT** **>** add, change,
+* In the **CONFIGURATION** tab **>** **HYPER PARAMETERS** > **General** **>** hover **>** **EDIT** **>** add, change,
   or delete keys and /or values **>** **SAVE**.
 
 
@@ -150,7 +150,7 @@ except experiments whose status is *Published* (read-only).
 
 **To add, change, or delete user properties:**
 
-* In **CONFIGURATIONS** **>** **USER PROPERTIES** > **Properties** **>** hover **>** **EDIT** **>** add, change, or delete
+* In **CONFIGURATION** **>** **USER PROPERTIES** > **Properties** **>** hover **>** **EDIT** **>** add, change, or delete
   keys and /or values **>** **SAVE**.
 
 
@@ -158,13 +158,13 @@ except experiments whose status is *Published* (read-only).
 #### Configuration Objects
 
 :::important
-In older versions of **ClearML Server**, the Task model configuration appeared in the **ARTIFACTS** tab **>** **MODEL
+In older versions of ClearML Server, the Task model configuration appeared in the **ARTIFACTS** tab **>** **MODEL
 CONFIGURATION** section. Task model configurations now appear in **CONFIGURATION** **>** **Configuration Objects**.
 :::
 
 **To add, change, or delete the Task model configurations:**
 
-* In **CONFIGURATIONS** **>** **CONFIGURATION OBJECTS** **>** **GENERAL** **>** hover **>** **EDIT** or **CLEAR** (if the
+* In **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** **GENERAL** **>** hover **>** **EDIT** or **CLEAR** (if the
   configuration is not empty).
 
 ### Artifacts

@@ -9,7 +9,7 @@ example script from ClearML's GitHub repo:
 
 * Setting an output destination for model checkpoints (snapshots).
 * Explicitly logging a scalar, other (non-scalar) data, and logging text.
-* Registering an artifact, which is uploaded to **ClearML Server**, and ClearML logs changes to it.
+* Registering an artifact, which is uploaded to [ClearML Server](../../deploying_clearml/clearml_server.md), and ClearML logs changes to it.
 * Uploading an artifact, which is uploaded, but changes to it are not logged.
 
 ## Prerequisites
@@ -202,7 +202,7 @@ logger.report_text(
 
 ## Step 3: Registering Artifacts
 
-Registering an artifact uploads it to **ClearML Server**, and if it changes, the change is logged in **ClearML Server**. 
+Registering an artifact uploads it to ClearML Server, and if it changes, the change is logged in ClearML Server. 
 Currently, ClearML supports Pandas DataFrames as registered artifacts.
 
 ### Register the Artifact
@@ -249,7 +249,7 @@ sample = Task.current_task().get_registered_artifacts()['Test_Loss_Correct'].sam
     
 ## Step 4: Uploading Artifacts
 
-Artifact can be uploaded to the **ClearML Server**, but changes are not logged.
+Artifact can be uploaded to the ClearML Server, but changes are not logged.
 
 Supported artifacts include: 
 * Pandas DataFrames
@@ -290,13 +290,12 @@ python pytorch_mnist_tutorial.py
 1. In the **ARTIFACTS** tab, **DATA AUDIT** section, click **Test_Loss_Correct**. The registered Pandas DataFrame appears, 
    including the file path, size, hash, metadata, and a preview.
 1. In the **OTHER** section, click **Loss**. The uploaded numpy array appears, including its related information.
-1. Click the **RESULTS** tab.
-1. Click the **CONSOLE** sub-tab, and see the debugging message showing the Pandas DataFrame sample.
-1. Click the **SCALARS** sub-tab, and see the scalar plots for epoch logging loss.
-1. Click the **PLOTS** sub-tab, and see the confusion matrix and histogram.
+1. Click the **CONSOLE** tab, and see the debugging message showing the Pandas DataFrame sample.
+1. Click the **SCALARS** tab, and see the scalar plots for epoch logging loss.
+1. Click the **PLOTS** tab, and see the confusion matrix and histogram.
 
 ## Next Steps
 
 * See the [User Interface](../../webapp/webapp_overview.md) section to learn about its features.
-* See the [ClearML Python Package Reference](../../clearml_sdk.md) to learn about 
+* See the [ClearML Python Package Reference](../../clearml_sdk/clearml_sdk.md) to learn about 
   all the available classes and methods.

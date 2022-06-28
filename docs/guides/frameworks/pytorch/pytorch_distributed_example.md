@@ -35,12 +35,14 @@ All of these artifacts appear in the main Task, **ARTIFACTS** **>** **OTHER**.
 
 ## Scalars
 
-We report loss to the main Task by calling the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method on `Task.current_task().get_logger`, which is the logger for the main Task. Since we call `Logger.report_scalar` with the same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are logged together.
+Report loss to the main Task by calling the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method 
+on `Task.current_task().get_logger`, which is the logger for the main Task. Since `Logger.report_scalar` is called with the 
+same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are logged together.
 
     Task.current_task().get_logger().report_scalar(
         'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i)
 
-The single scalar plot for loss appears in **RESULTS** **>** **SCALARS**.
+The single scalar plot for loss appears in **SCALARS**.
 
 ![image](../../../img/examples_pytorch_distributed_example_08.png)
 
@@ -56,7 +58,7 @@ param = {'worker_{}_stuff'.format(dist.get_rank()): 'some stuff ' + str(randint(
 Task.current_task().connect(param)
 ```
 
-Command line options appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
+Command line options appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args**.
 
 ![image](../../../img/examples_pytorch_distributed_example_01.png)
 
@@ -71,6 +73,6 @@ Task.current_task().connect(param)
 
 ## Log
 
-Output to the console, including the text messages printed from the main Task object and each subprocess, appears in **RESULTS** **>** **CONSOLE**.
+Output to the console, including the text messages printed from the main Task object and each subprocess, appears in **CONSOLE**.
 
 ![image](../../../img/examples_pytorch_distributed_example_06.png)

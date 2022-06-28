@@ -6,13 +6,13 @@ The example [audio_classification_UrbanSound8K.ipynb](https://github.com/allegro
 
 ## Scalars
 
-The accuracy, learning rate, and training loss scalars are automatically logged, along with the resource utilization plots (titled **:monitor: machine**), and appear **RESULTS** **>** **SCALARS**.
+The accuracy, learning rate, and training loss scalars are automatically logged, along with the resource utilization plots (titled **:monitor: machine**), and appear in **SCALARS**.
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_03.png)
 
 ## Debug Samples
 
-The audio samples and spectrogram plots are automatically logged and appear in **RESULTS** **>** **DEBUG SAMPLES**.
+The audio samples and spectrogram plots are automatically logged and appear in **DEBUG SAMPLES**.
 
 ### Audio Samples
 
@@ -36,7 +36,7 @@ a call to the [Task.connect](../../../../../references/sdk/task.md#connect) meth
     configuration_dict = {'number_of_epochs': 10, 'batch_size': 4, 'dropout': 0.25, 'base_lr': 0.001}
     configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
 
-Parameter dictionaries appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **General**.
+Parameter dictionaries appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **General**.
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_01.png)
 
@@ -46,6 +46,6 @@ TensorFlow Definitions appear in the **TF_DEFINE** subsection.
 
 ## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_02.png)

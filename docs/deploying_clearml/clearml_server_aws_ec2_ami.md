@@ -2,7 +2,7 @@
 title: AWS EC2 AMIs
 ---
 
-Deployment of **ClearML Server** on AWS is easily performed using AWS AMIs, which are available in the AWS community AMI catalog.
+Deployment of ClearML Server on AWS is easily performed using AWS AMIs, which are available in the AWS community AMI catalog.
 The [ClearML Server community AMIs](#clearml-server-aws-community-amis) are configured by default without authentication
 to allow quick access and onboarding.
 
@@ -12,7 +12,7 @@ best matches the workflow.
 For information about upgrading a ClearML Server in an AWS instance, see [here](upgrade_server_aws_ec2_ami.md).
 
 :::important
-If ClearML Server is being reinstalled, we recommend clearing browser cookies for ClearML Server. For example, 
+If ClearML Server is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
 and delete all cookies under the ClearML Server URL.
 :::
@@ -20,7 +20,7 @@ and delete all cookies under the ClearML Server URL.
 ## Launching
 
 :::warning
-By default, **ClearML Server** deploys as an open network. To restrict **ClearML Server** access, follow the instructions 
+By default, ClearML Server deploys as an open network. To restrict ClearML Server access, follow the instructions 
 in the [Security](clearml_server_security.md) page.
 :::
 
@@ -34,7 +34,7 @@ and see:
 
 ## Accessing ClearML Server
 
-Once deployed, **ClearML Server** exposes the following services:
+Once deployed, ClearML Server exposes the following services:
 
 * Web server on `TCP port 8080`
 * API server on `TCP port 8008`
@@ -108,25 +108,25 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.4.0
+#### v1.5.0
 
-* **eu-north-1** : ami-012eda9c8e72df57b 
-* **ap-south-1** : ami-0e25dc36f7ac4d870 
-* **eu-west-3** : ami-0a04e04689d2e35d3 
-* **eu-west-2** : ami-010080374a3641898 
-* **eu-west-1** : ami-099557aef23d9506f 
-* **ap-northeast-3** : ami-083ad8b58914f85c5 
-* **ap-northeast-2** : ami-0e1735fa3a883a8c0 
-* **ap-northeast-1** : ami-0082d74f0666112e5 
-* **sa-east-1** : ami-080e9a2a46d2633ad 
-* **ca-central-1** : ami-0a3267210d3053481 
-* **ap-southeast-1** : ami-02ce519ac1b5e595b 
-* **ap-southeast-2** : ami-04c46e7d3458690fb 
-* **eu-central-1** : ami-08db980d8cb60e879 
-* **us-east-2** : ami-08f887d3a1cb180de 
-* **us-west-1** : ami-0c813d901c00bce92 
-* **us-west-2** : ami-059f65ceb10cd6c6f 
-* **us-east-1** : ami-0235447e7d58b56d9 
+* **eu-north-1** : ami-07f1db3332e4f45c3 
+* **ap-south-1** : ami-0372719e7657e868f 
+* **eu-west-3** : ami-0c6f39101a0ee4d80 
+* **eu-west-2** : ami-057f94b24be44dbb4 
+* **eu-west-1** : ami-0f7e4fd55aa07d52f 
+* **ap-northeast-3** : ami-0523dcc9ab3a22f3d 
+* **ap-northeast-2** : ami-00da8d9aa14fb9f8c 
+* **ap-northeast-1** : ami-0945eb64409035247 
+* **sa-east-1** : ami-06cb94222d25c7520 
+* **ca-central-1** : ami-0b7eefceb40aaff99 
+* **ap-southeast-1** : ami-097d1c9a159a3b867 
+* **ap-southeast-2** : ami-0461914786ea66f82 
+* **eu-central-1** : ami-0a617231bd05a6cc4 
+* **us-east-2** : ami-085b00dabd0558569 
+* **us-west-1** : ami-02422935a9583a896 
+* **us-west-2** : ami-091137d05c794efbc 
+* **us-east-1** : ami-0234ca98c334d9cb7 
 
 ## Next Step
 

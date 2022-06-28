@@ -10,11 +10,11 @@ method to upload from:
 * URL of media already uploaded to some storage
 
 ClearML uploads media to the bucket specified in the ClearML configuration file or ClearML can be configured for image storage, see [Logger.set_default_upload_destination](../../references/sdk/logger.md#set_default_upload_destination)
-(storage for [artifacts](../../fundamentals/artifacts.md#setting-upload-destination) is different). Set credentials for storage in the ClearML 
+(storage for [artifacts](../../clearml_sdk/task_sdk.md#setting-upload-destination) is different). Set credentials for storage in the ClearML 
 [configuration file](../../configs/clearml_conf.md).
 
-ClearML reports media in the **ClearML Web UI** **>** experiment details **>** **RESULTS** tab **>** **DEBUG SAMPLES** 
-sub-tab. 
+ClearML reports media in the **ClearML Web UI** **>** experiment details **>** **DEBUG SAMPLES** 
+tab. 
 
 When the script runs, it creates an experiment named `audio and video reporting`, which is associated with the `examples` 
 project.
@@ -38,7 +38,7 @@ Logger.current_logger().report_media(
 )
 ```
 
-The reported audio can be viewed in the **DEBUG SAMPLES** sub-tab. Double click a thumbnail, and the audio player opens.
+The reported audio can be viewed in the **DEBUG SAMPLES** tab. Double click a thumbnail, and the audio player opens.
 
 ![image](../../img/examples_reporting_08.png)
 
@@ -55,6 +55,6 @@ Logger.current_logger().report_media(
 )
 ```
     
-The reported video can be viewed in the **DEBUG SAMPLES** sub-tab. Double click a thumbnail, and the video player opens.
+The reported video can be viewed in the **DEBUG SAMPLES** tab. Double click a thumbnail, and the video player opens.
 
 ![image](../../img/examples_reporting_09.png)
